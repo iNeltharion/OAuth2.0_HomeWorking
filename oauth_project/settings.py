@@ -61,6 +61,9 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
+
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -70,16 +73,20 @@ TEMPLATES = [
     },
 ]
 
-# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''  # вставьте свой Client ID
-# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''  # вставьте свой Client Secret
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '257738234219-j1s2jh15h5jmpl70vfil1ap55i8pjarf.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_REDIRECT_URI = 'http://127.0.0.1:8000/auth/complete/google/'
 
 AUTHENTICATION_BACKENDS = (
-    'social_core.backends.google.GoogleOAuth2',  # добавляем Google OAuth2
-    'django.contrib.auth.backends.ModelBackend',  # стандартная аутентификация Django
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
 )
 
-LOGIN_REDIRECT_URL = '/'  # Страница, на которую будет перенаправлен пользователь после успешной авторизации
-LOGOUT_REDIRECT_URL = '/'  # Страница, на которую будет перенаправлен пользователь после выхода
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'oauth_project.wsgi.application'
 
@@ -135,3 +142,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
