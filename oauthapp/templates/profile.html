@@ -6,7 +6,12 @@
     <title>Профиль</title>
 </head>
 <body>
-    <h1>Привет, {{ user.username }}!</h1>
-    <p>Email: {{ user.email }}</p>
+    {% if user.is_authenticated %}
+        <h1>Привет, {{ user.username }}!</h1>
+        <p>Email: {{ user.email }}</p>
+        <a href="{% url 'logout' %}">Выйти</a>
+    {% else %}
+        <p>Пожалуйста, <a href="{% url 'social:begin' 'google' %}">авторизуйтесь через Google</a>, чтобы увидеть свой профиль.</p>
+    {% endif %}
 </body>
 </html>
