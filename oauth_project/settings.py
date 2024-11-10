@@ -70,8 +70,8 @@ TEMPLATES = [
     },
 ]
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '257738234219-j1s2jh15h5jmpl70vfil1ap55i8pjarf.apps.googleusercontent.com'  # вставьте свой Client ID
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'  # вставьте свой Client Secret
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''  # вставьте свой Client ID
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''  # вставьте свой Client Secret
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2',  # добавляем Google OAuth2
