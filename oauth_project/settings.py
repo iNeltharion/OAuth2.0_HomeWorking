@@ -88,6 +88,8 @@ AUTHENTICATION_BACKENDS = (
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+SOCIAL_AUTH_LOGIN_ERROR_URL = '/login-error'
+
 WSGI_APPLICATION = 'oauth_project.wsgi.application'
 
 
