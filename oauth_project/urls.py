@@ -24,7 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('social_django.urls', namespace='social')),
     path('', home, name='home'),
-    path('profile/', index, name='index'),
+    path('', index, name='index'),
+    path('auth/login/google/', index, name='profile'),
 ]
 
 

@@ -12,7 +12,7 @@
         <p>Привет, {{ user.username }}!</p>
         <a href="{% url 'logout' %}">Выйти</a>
     {% else %}
-        <a href="{% url 'social:begin' 'google' %}" class="btn btn-google">
+        <a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-google">
             Авторизация через Google
         </a>
     {% endif %}
