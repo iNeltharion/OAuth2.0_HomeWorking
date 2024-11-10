@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Авторизация через Google</title>
+    </head>
+    <body>
+        <h1>Добро пожаловать на сайт</h1>
+        <a href="{% url 'social:begin' 'google' %}" class="btn btn-google">
+            Авторизация через Google
+        </a>
+    </body>
+</html>
