@@ -18,11 +18,11 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from oauthapp.views import home  # Импортируем функцию home из oauthapp.views
+from oauthapp.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('auth/', include('social_django.urls')),  # Убедитесь, что этот путь подключен
-    path('', home, name='home'),  # Главная страница
+    path('auth/', include('social_django.urls', namespace='social')),
+    path('', home, name='home'),
 ]
 
